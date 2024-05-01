@@ -16,8 +16,6 @@ const Home = () => {
         if (!localStorage.getItem('user')) {
             navigate('/login');
         }
-
-
         const fetchData = async () => {
             try {
                 // Inicializa Firebase con tu configuración
@@ -44,7 +42,6 @@ const Home = () => {
                         const gastosArray = Object.entries(data).map(([key, value]) => ({ id: key, ...value }));
                         setGastos(gastosArray);
                     } else {
-                        // No hay datos disponibles
                         setGastos([]);
                     }
                 });
